@@ -1,0 +1,88 @@
+<!-- Home page for our human adaptor -->
+{% extends "base.html" %}
+{% set active_page = "index" %}
+{% block content %}
+<div class="container">
+
+    <h1>Welcome to the Treasure Valley Water Information Center</h1>
+
+    <h2 style="padding:0 60px">Democratic Science in Action</h2>
+
+    </br>
+    <p>
+    Here you can run simulations of different Treasure Valley futures. Although
+    we may differ in why we think it's happening, the data shows that less 
+    snow is falling in the Sawtooth Mountains. We need to understand if this
+    will result in less water for Boise and the surrouding Treasure Valley area. 
+    Even if this does impact water availability for our area, it may not
+    be of much consequence if agricultural use continues to diminish as 
+    urban and suburban development displaces agriculture in the Treasure Valley.
+    </p>
+
+    <p>
+    Here you can learn more about the socio-economic-hydrologic system of the 
+    Treasure Valley, learn about how Boise State University researchers are 
+    working to understand the problem, and even run your own version of the 
+    models that Boise State University researchers have developed for this problem.
+    </p>
+
+  <div id="splash-opts" class="row body" height="400">
+    <!-- begin three separate "splash opts" -->
+    <!-- #1 -->
+    <div class="col-md-4 col-sm-6 col-xs-12"> 
+      <a href="/search" class="splash-opt">
+       <div class="thumbnail">
+         
+        <h3 class="thumbnail-title">What's happening with our water</h3>
+        <p class="central-nav-blurb"></p>
+       </div></a>        
+    </div>
+
+    <!-- #2 -->
+    <div class="col-md-4 col-sm-6 col-xs-12"> 
+      <a href="/processing" class="splash-opt">
+       <div class="thumbnail">
+        <h3 class="thumbnail-title">What the future may hold</h3>
+        <p style="top:70px" class="central-nav-blurb"></p>
+       </div></a>
+     </div>
+
+    <!-- #3 -->
+    <div class="col-md-4 col-sm-6 col-xs-12"> 
+      <a href="/share" class="splash-opt">
+        <div class="thumbnail">
+          <h3 class="thumbnail-title">Run your own scenarios</h3>
+          <p class="central-nav-blurb"></p>
+        </div></a>
+    </div>
+  <!-- end splash opts -->
+  </div>
+<!-- end container -->
+</div>
+
+<!-- smaller font (non-containered) for funding info -->
+<div>
+  <p>This is for informational purposes only. We do use cookies on this site and
+  try to discover your location based on your IP address so all can better
+  understand perceptions of our fellow citizens in the Treasure Valley</p>
+</div>
+
+<table style="margin:auto;border-top:1px solid #ebebeb;width:820px;padding-top:35px;height:220px;" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <td valign="top"><br>
+               <table valign="top" border="0" cellpadding="0" cellspacing="0" width="900">
+                  <tbody><tr>
+                    <td border="0" style="padding-right:45px;"
+                      valign="top"><a
+                    href="http://earth.boisestate.edu/lejoflores/"
+                target="_blank"><img src="/static/images/bsu_logo.jpg" alt="Flores Group, BSU" height="80" border="0"></a></td>
+                    <td align="right" valign="top"><a
+                        href="http://westernconsortium.org/"
+                    target="_blank"><img src="/static/images/wcwave_logo.jpg" alt="EPSCoR" height="60" border="0"></a></td>
+                  </tr>			
+               </tbody></table></td>  
+            </tr>                                      
+        </tbody></table>
+  </div>
+
+{% endblock %}
