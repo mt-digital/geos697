@@ -1,6 +1,9 @@
 <!-- Home page for our human adaptor -->
 {% extends "base.html" %}
 {% set active_page = "index" %}
+{% block head_ext %}
+<script src="static/holder.js"></script>
+{% endblock %}
 {% block content %}
 <div class="container">
 
@@ -26,38 +29,78 @@
     models that Boise State University researchers have developed for this problem.
     </p>
 
-  <div id="splash-opts" class="row body" height="400">
-    <!-- begin three separate "splash opts" -->
-    <!-- #1 -->
-    <div class="col-md-4 col-sm-6 col-xs-12"> 
-      <a href="/search" class="splash-opt">
-       <div class="thumbnail">
-         
-        <h3 class="thumbnail-title">What's happening with our water</h3>
-        <p class="central-nav-blurb"></p>
-       </div></a>        
-    </div>
+  <!--<div id="splash-opts" class="row" height="400">-->
+      <!--[> begin three separate "splash opts" <]-->
+      <!--[> #1 <]-->
+      <!--<div class="col-md-4 col-sm-4 col-xs-12"> -->
+        <!--<a href="/search" class="splash-opt">-->
+         <!--<div class="thumbnail">-->
+           
+          <!--<h3 class="thumbnail-title">Water use in Treasure Valley</h3>-->
+          <!--<p class="central-nav-blurb"></p>-->
+         <!--</div></a>        -->
+      <!--</div>-->
 
-    <!-- #2 -->
-    <div class="col-md-4 col-sm-6 col-xs-12"> 
-      <a href="/processing" class="splash-opt">
-       <div class="thumbnail">
-        <h3 class="thumbnail-title">What the future may hold</h3>
-        <p style="top:70px" class="central-nav-blurb"></p>
-       </div></a>
-     </div>
+      <!--[> #2 <]-->
+      <!--<div class="col-md-4 col-sm-4 col-xs-12"> -->
+        <!--<a href="/processing" class="splash-opt">-->
+         <!--<div class="thumbnail">-->
+          <!--<h3 class="thumbnail-title">Learn about and use our model</h3>-->
+          <!--<p style="top:70px" class="central-nav-blurb"></p>-->
+         <!--</div></a>-->
+       <!--</div>-->
 
-    <!-- #3 -->
-    <div class="col-md-4 col-sm-6 col-xs-12"> 
-      <a href="/share" class="splash-opt">
-        <div class="thumbnail">
-          <h3 class="thumbnail-title">Run your own scenarios</h3>
-          <p class="central-nav-blurb"></p>
-        </div></a>
+      <!--[> #3 <]-->
+      <!--<div class="col-md-4 col-sm-4 col-xs-12"> -->
+        <!--<a href="/share" class="splash-opt">-->
+          <!--<div class="thumbnail">-->
+            <!--<h3 class="thumbnail-title">Explore likely water scenarios</h3>-->
+            <!--<p class="central-nav-blurb"></p>-->
+          <!--</div></a>-->
+      <!--</div>-->
+    <!--[> end splash opts <]-->
+    <!--</div>-->
+  <!--</div>-->
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img class="thumb-img" data-src="holder.js/100px200" alt="...">
+      <div class="caption">
+        <h3>Explore water in the Treasure Valley</h3>
+        <p>Learn about the history and trends of water use in Treasure Valley</p>
+        <p><a href="#" class="btn btn-primary thumbnail-button" role="button">
+          Learn more about water use in the Treasure Valley</a>
+      </div>
     </div>
-  <!-- end splash opts -->
   </div>
-<!-- end container -->
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img class="thumb-img" data-src="holder.js/100px200" alt="...">
+      <div class="caption">
+        <h3>Models for the future of Treasure Valley water</h3>
+        <p>Participate in creating better models and selecting the best 
+        parameters</p>
+        <p><a href="#" class="btn btn-primary thumbnail-button" role="button">
+          Understand our water use models and run your own
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img class="thumb-img" src="holder.js/100px200" alt="...">
+      <div class="caption">
+        <h3>Likely scenarios for Treasure Valley water</h3>
+        <p>And why we think these are the most likely</p>
+        {# later use url_for(default_set="most likely") or sth like that #}
+        <p><a href="#" class="btn btn-primary thumbnail-button" role="button">
+          Run models for the likeliest scenarios</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- smaller font (non-containered) for funding info -->
@@ -74,15 +117,19 @@
                   <tbody><tr>
                     <td border="0" style="padding-right:45px;"
                       valign="top"><a
-                    href="http://earth.boisestate.edu/lejoflores/"
-                target="_blank"><img src="/static/images/bsu_logo.jpg" alt="Flores Group, BSU" height="80" border="0"></a></td>
+                      href="http://earth.boisestate.edu/lejoflores/"
+                      target="_blank">
+                        <img src="/static/images/bsu_logo.jpg" 
+                             alt="Flores Group, BSU" height="80" 
+                             border="0"></a></td>
                     <td align="right" valign="top"><a
                         href="http://westernconsortium.org/"
-                    target="_blank"><img src="/static/images/wcwave_logo.jpg" alt="EPSCoR" height="60" border="0"></a></td>
+                    target="_blank"><img src="/static/images/wcwave_logo.jpg" 
+                                         alt="EPSCoR" height="60" border="0">
+                    </a></td>
                   </tr>			
                </tbody></table></td>  
             </tr>                                      
         </tbody></table>
   </div>
-
 {% endblock %}

@@ -66,12 +66,24 @@ body, p {
 }
 .thumbnail{
     /*height: 375px;*/
-  width: 375px;
+  width:100%;
+  margin: 20px;
+  /*width: 100%;*/
     border: 4pt black;
 }
 
+.thumb-img {
+  width: 100%;
+  height: 200px;
+}
+
+a.thumbnail-button {
+  width: 100%;
+  font-size: 13px;
+}
+
 #splash-opts .panel {
-  float: none;
+  /*float: center;*/
   display: table-cell;
   vertical-align: top;
 }
@@ -196,10 +208,6 @@ span.badge {
   float: left;
   background-color: green;
   margin: auto 4px;
-}
-
-.isnobal-label {
-    width: 100%
 }
 
 span.badge>a {
