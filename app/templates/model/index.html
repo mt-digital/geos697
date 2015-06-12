@@ -12,7 +12,11 @@
         <div class="col-sm-3 col-xs-3 col-md-3">
           Month: <select id="peak-inflow-rate-mo-input" name="peak-inflow-rate-mo">
             {% for m in range(1,7) %}
-              <option value="{{ m }}">{{ m }}</option>
+              {% if m|string() == (peak_inflow_date[0]) %}
+                <option value="{{ m }}" selected="selected">{{ m }}</option>
+              {% else %}
+                <option value="{{ m }}">{{ m }}</option>
+              {% endif %}
             {% endfor %} 
           </select>
         </div>
@@ -20,7 +24,11 @@
         <div class="col-sm-3 col-xs-3 col-md-3">
           Day: <select id="peak-inflow-rate-day-input" name="peak-inflow-rate-day">
             {% for d in range(1,32) %}
-              <option value="{{ d }}">{{ d }}</option>
+              {% if d|string == peak_inflow_date[1] %}
+                <option value="{{ d }}" selected="selected">{{ d }}</option>
+              {% else %}
+                <option value="{{ d }}">{{ d }}</option>
+              {% endif %}
             {% endfor %} 
           </select>
         </div>
@@ -52,7 +60,7 @@
       <div class="col-md-9 col-sm-9 col-xs-9 ">
         <input type=range min=0 max=1 value="{{ ag_to_muni_ratio }}" 
                id="ag-to-muni-ratio-input" 
-               name="ag-to-muni-ratio" step=.1 oninput="outputUpdate(value,id)">
+               name="ag-to-muni-ratio" step=.05 oninput="outputUpdate(value,id)">
       </div>
       <div class="col-md-3 col-sm-3 col-xs-3">
         <output class="slider-outs" for="ag-to-muni-ratio-input" id="ag-to-muni-ratio">{{ ag_to_muni_ratio }}</output>
