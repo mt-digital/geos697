@@ -16,6 +16,20 @@ body {
   width: 50px;
 }
 
+output.slider-outs {
+  margin-top: -30px;
+  font-size: 25px;
+}
+
+button#update-model {
+  width: 100%;
+}
+
+/*div#model-chart {*/
+  /*width: 100%;*/
+  /*margin: 0 auto;*/
+  /*position: absolute;*/
+/*}*/
 
 .name-holder{
   padding:10px;
