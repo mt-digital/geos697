@@ -48,4 +48,33 @@ Follow the instructions: http://docs.mongodb.org/manual/administration/install-o
 I don't know. If you do it, please post it here.
 
 
-#### 2. Set up and start the web server
+#### 2. Install Python dependencies
+
+You need Python 2.7.9 to do this. Just go get yourself the latest Python and try
+installing it if you're not sure. This will work on OS X and Linux. If you use
+Windows you might try using Cygwin, but I'm not sure. If you get this working on
+Windows, please post instructions here.
+
+Next,
+
+```
+pip install virtualenv
+```
+
+then
+
+```
+source venv/bin/activate && pip install -r requirements.txt
+```
+
+
+#### 3. Set up and start the web server
+
+At this point you can run
+
+```
+./startup.py
+```
+
+And the database will be initialized and the web server running. Navigate to 
+http://localhost:4000 to view the web app!
