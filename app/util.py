@@ -1,4 +1,4 @@
-import scipy
+from scipy import signal
 
 import numpy as np
 #: the water flow always stays above this height (not baseflow b/c of its spec meaning
@@ -28,7 +28,7 @@ def create_fake_hydrograph(peak_inflow_mo=5, peak_inflow_day=1,
     post_steps = np.linspace(BASE_HEIGHT, START_HEIGHT, len_post_window)
 
     window = (BASE_HEIGHT +
-              hgraph_height * scipy.signal.gaussian(WINDOW, hgraph_stddev))
+              hgraph_height * signal.gaussian(WINDOW, hgraph_stddev))
 
     hgraph = np.hstack((pre_steps, window, post_steps))
 

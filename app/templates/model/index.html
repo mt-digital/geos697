@@ -42,14 +42,14 @@
 
     <div class="row">
       <div class="col-md-9 col-sm-9 col-xs-9">
-        <input type=range min=0 max=2.0 value="{{ snowpack_percent_change }}" 
+        <input type=range min=0 max=1.9 value="{{ percent_mountain_snow }}" 
                id="snowpack-percent-change-input" 
                name="snowpack-percent-change" step=.1 
                oninput="outputUpdate(value,id)">
       </div>
 
       <div class="col-md-3 col-sm-3 col-xs-3">
-        <output class="slider-outs" for="snowpack-percent-range-input" id="snowpack-percent-change">{{ snowpack_percent_change }}</output>
+        <output class="slider-outs" for="snowpack-percent-range-input" id="snowpack-percent-change">{{ percent_mountain_snow }}</output>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
     <label for="ag-to-muni-ratio-input">Ratio of Agricultural Land use to Municipal Land Use</label>
     <div class="row">
       <div class="col-md-9 col-sm-9 col-xs-9 ">
-        <input type=range min=0 max=1 value="{{ ag_to_muni_ratio }}" 
+        <input type=range min=0 max=0.95 value="{{ ag_to_muni_ratio }}" 
                id="ag-to-muni-ratio-input" 
                name="ag-to-muni-ratio" step=.05 oninput="outputUpdate(value,id)">
       </div>
@@ -96,7 +96,7 @@ function drawBackgroundColor() {
 
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'X');
-  data.addColumn('number', 'Discharge');
+  data.addColumn('number', 'Streamflow');
 
   data.addRows([
     {% for el in downstream_discharge %}
@@ -106,10 +106,15 @@ function drawBackgroundColor() {
 
   var options = {
     hAxis: {
-      title: 'Time'
+      title: 'Time (Day of Year)'
     },
     vAxis: {
-      title: 'Boise River Downstream Discharge'
+      title: 'Boise River Downstream Streamflow (cfs)',
+      viewWindowMode: 'explicit',
+      viewWindow: {
+        min: 20,
+        max: 1100
+      }
     },
     backgroundColor: '#ddd',
     height: 400,
