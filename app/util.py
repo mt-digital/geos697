@@ -15,15 +15,15 @@ def create_fake_hydrograph(peak_inflow_mo=5, peak_inflow_day=1,
     hgraph_peak_loc = peak_inflow_mo*31 + peak_inflow_day + 5
 
     hgraph_height = BASE_HEIGHT + \
-                    800 * percent_snow_change * (1 - ag_to_muni_ratio)
+                    800.0 * percent_snow_change * (1.0 - ag_to_muni_ratio)
 
-    hgraph_stddev = 15*percent_snow_change
+    hgraph_stddev = 15.0*percent_snow_change
 
-    len_pre_window = hgraph_peak_loc - WINDOW/2
+    len_pre_window = hgraph_peak_loc - WINDOW/2.0
 
     pre_steps = np.linspace(START_HEIGHT, BASE_HEIGHT, len_pre_window)
 
-    len_post_window = 365 - (hgraph_peak_loc + WINDOW/2)
+    len_post_window = 365 - (hgraph_peak_loc + WINDOW/2.0)
 
     post_steps = np.linspace(BASE_HEIGHT, START_HEIGHT, len_post_window)
 

@@ -22,8 +22,8 @@
   <body>
 
   {% set navigation_bar = [('/', 'main.index', 'Home'),
-                           ('/about', 'main.about', 'Learn More'),
-                           ('/engage', 'main.engage', 'Get Involved')
+                           ('/', 'main.about', 'Learn More'),
+                           ('/', 'main.engage', 'Get Involved')
                            ] %}
   {% set active_page = active_page|default('index') %}
 

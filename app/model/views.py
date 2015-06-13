@@ -41,8 +41,8 @@ def index():
                           percent_mountain_snow, ag_to_muni_ratio)
     else:
 
-        peak_inflow_month = 6
-        peak_inflow_day = 1
+        peak_inflow_month = "6"
+        peak_inflow_day = "1"
         percent_mountain_snow = DEFAULT_SNOWPACK_PERCENT_CHANGE
         ag_to_muni_ratio = DEFAULT_AG_TO_MUNI_RATIO
 
@@ -55,6 +55,7 @@ def index():
                            percent_mountain_snow=percent_mountain_snow,
                            ag_to_muni_ratio=ag_to_muni_ratio,
                            downstream_discharge=downstream_discharge)
+
 
 def get_discharge(peak_inflow_month, peak_inflow_day, percent_mountain_snow,
                   ag_to_muni_ratio):
