@@ -77,4 +77,4 @@ At this point you can run
 ```
 
 And the database will be initialized and the web server running. Navigate to 
-http://localhost:4000 to view the web app!
+[http://localhost:4000](http://localhost:4000) to view the web app!
